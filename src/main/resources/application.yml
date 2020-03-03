@@ -1,0 +1,27 @@
+### Default Setting
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: local
+
+  datasource:
+    hikari:
+      jdbc-url: jdbc:postgresql://localhost:5432/security-practice
+      username: postgres
+      password:
+      driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    show-sql: true
+
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+      schema: classpath:org/springframework/session/jdbc/schema-@@platform@@.sql
+      table-name: SPRING_SESSION
